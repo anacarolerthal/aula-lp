@@ -148,6 +148,9 @@ dmypy.json
 cython_debug/
 
 ### Python ###
+*.code-workspace
+pipfile
+pipfile.lock
 # Byte-compiled / optimized / DLL files
 
 # C extensions
