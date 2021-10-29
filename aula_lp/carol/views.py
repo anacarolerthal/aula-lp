@@ -5,4 +5,4 @@ def index(request):
     return HttpResponse("<strong>nao deu tempooooooooooo</strong>")
 
 def special(request):
-    return render(request, "templates/ferias.html")
+    return render(request, "ferias.html")
