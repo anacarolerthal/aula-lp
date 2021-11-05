@@ -28,3 +28,13 @@ def dinamica(request,param):
         return HttpResponse("<h1>Parâmetro 42</p>")
     else:
         return HttpResponseNotFound("<h1> Página não encontrada... :/</h1>")
+
+def pagina_dinamica(request):
+    from datetime import date, datetime
+    data = date.today()
+    hora = datetime.now().strftime('%H:%M:%S')
+    contexto = {
+        "data": data,
+        "hora": hora
+    }
+    return render(request, "pagina_dinamica.html", contexto)
