@@ -1,8 +1,12 @@
+from django.http.response import HttpResponseNotFound, HttpResponseRedirect
 from django.shortcuts import render
-from django.http import HttpResponse
+from django.urls import reverse
 
 def index(request):
-    return HttpResponse("ferias1.html")
+    context = {
+        "pessoa":"Tiago",
+    }
+    return render(request, "ferias1.html", context)
 
 def ferias2(request):
     return render(request, "ferias2.html")
