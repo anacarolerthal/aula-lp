@@ -19,3 +19,9 @@ def dynamic_date(request, year, month):
 def data(request, year, month):
     redirect_url = reverse("dynamic_date", args=[year, month])
     return HttpResponseRedirect(redirect_url)
+
+def rpg(request, sistema):
+    context = {
+        "sistema": sistema
+    }
+    return render(request, "intro.html", context)
