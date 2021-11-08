@@ -3,8 +3,11 @@ from django.shortcuts import render
 from django.urls import reverse
 
 def index(request):
+    esportes = ["skate park","vôlei de quadra","polo aquático","canoagem slalom"]
     context = {
         "pessoa":"Tiago",
+        "esportes": esportes, 
+
     }
     return render(request, "ferias1.html", context)
 
@@ -15,7 +18,7 @@ def ferias3(request):
     return render(request, "ferias3.html")
 
 def redirect_ferias(request):
-    redirect_url = reverse("index")
+    redirect_url = reverse("ferias1")
     return HttpResponseRedirect(redirect_url)
 
 def by_month(request, month):

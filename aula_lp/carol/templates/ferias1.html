@@ -18,15 +18,15 @@
 
         <article>
         <header>
-            <h3>Assisti coisas com {{pessoa}}
+            <h3>Assisti coisas com {{pessoa|phone2numeric}}
             </h3>
         </header>
         <main>
 		
-            <p> Assisti a melhor série do universo com o Tiago por call! Conseguimos ver uma temporada inteira nas férias (talvez até mais. Na real eu não lembro. Atualmente já estamos na quarta, o que me faz questionar o vício. É a quarta vez que eu assisto isso também.).</p>
+            <p> Assisti a melhor série do universo com o {{pessoa|lower}} por call! Conseguimos ver uma temporada inteira nas férias (talvez até mais. Na real eu não lembro. Atualmente já estamos na quarta, o que me faz questionar o vício. É a quarta vez que eu assisto isso também.).</p>
 			<iframe width="520" height="320" src="https://www.youtube.com/embed/8lguc5Ota4U">
 			</iframe>
-
+            
 			<p> Eu também assisti anime pela primeira vez na vida. Foi surpreendentemente legal. (Quem sou eu??? Fui convertida???)</p>
         </main>
         </article>
@@ -35,10 +35,9 @@
         <main>
             <p> Também no Discord assisti aos jogos de Tokyo com meus amigos do CP2 e agregados. Assistimos: </p>
 			<ul>
-				<li>Skate Park</li>
-				<li>Vôlei de quadra</li>
-				<li>Polo Aquático</li>
-				<li>Canoagem Slalom</li>
+				{% for esporte in esportes %}
+                    <li>{{esporte|title}}</li>
+                {% endfor %}
 			</ul>
 			<p> Fato que não tem a ver com as férias: estou com muita saudade dos meus amigos do ensino médio :( </p>
 			
