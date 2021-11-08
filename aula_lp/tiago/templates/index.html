@@ -13,6 +13,19 @@
     </header>
     <main>      
       <p> É necessário preparar cenas para seus jogadores, estatísticas de monstros e combates para desafiá-los de forma justa, e estabelecer "ganchos" de história para eles seguirem.</p>
+      <header>
+        <h3>Opções</h3>
+      </header>
+      <p> Existem inúmeros sistemas no mercado, cada um com um tema diferente, como super-heróis, histórias de terror, entre outras coisas. A seguir, está presente uma lista de alguns dos sistemas mais conhecidos:</p>
+      <ul>
+        {% for sistema in lista_rpgs %}
+          <li>{{sistema|upper}}</li>
+        {% endfor %}
+     </ul>
+     <p> Minha recomendação pessoal seria o sistema {{lista_rpgs|first}}, pois ele possui uma "Action Economy" 
+         muito bem balanceada e permite uma incrivel customização de personagem, com decisões sendo tomadas a cada nível.
+         Outro sistema interessante é o {{lista_rpgs|last}}, mas ele tem uma complexidade muito grande e que pode afastar
+         novos jogadores.</p>
     </main>
   </article>   	
 </body>
