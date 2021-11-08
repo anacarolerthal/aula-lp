@@ -3,7 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Bruno</title>
+    <title>{{nome|add:" "|add:sobrenome}}</title>
+    {% for letra in nome|add:" "|add:sobrenome %}
+        <p>{{letra}}</p>
+    {% endfor %}
 </head>
 
 <body>
@@ -12,10 +15,10 @@
             Python web
         </h3>
         <p>
-            Data: {{data}}
+            Data: {{data_hora.0}}
         </p>
         <p>
-            Hora: {{hora}}
+            Hora: {{data_hora.1}}
         </p>
     </header>
 </body>

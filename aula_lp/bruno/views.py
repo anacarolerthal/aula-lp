@@ -33,8 +33,12 @@ def pagina_dinamica(request):
     from datetime import date, datetime
     data = date.today()
     hora = datetime.now().strftime('%H:%M:%S')
+    data_hora = [data, hora]
     contexto = {
-        "data": data,
-        "hora": hora
+        #"data": data,
+        #"hora": hora,
+        "data_hora": data_hora,
+        "nome": "Bruno",
+        "sobrenome": "Fornaro"
     }
     return render(request, "pagina_dinamica.html", contexto)
