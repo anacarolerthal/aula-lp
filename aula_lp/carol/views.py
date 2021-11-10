@@ -17,6 +17,9 @@ def ferias2(request):
 def ferias3(request):
     return render(request, "ferias3.html")
 
+def feriasbasic(request):
+    return render(request, "ferias-dtl.html")
+
 def redirect_ferias(request):
     redirect_url = reverse("ferias1")
     return HttpResponseRedirect(redirect_url)
