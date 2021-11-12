@@ -3,9 +3,11 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>{{nome|add:" "|add:sobrenome}}</title>
+    <title>{{Bruno}}</title>
+    <h1>{{nome|add:" "|add:sobrenome|title}}</h1>
+    <p>Tamanho do nome: {{nome|add:" "|add:sobrenome|length}} caracteres.</p>
     {% for letra in nome|add:" "|add:sobrenome %}
-        <p>{{letra}}</p>
+        <p>{{letra|upper}}</p>
     {% endfor %}
 </head>
 
@@ -14,13 +16,12 @@
         <h3>
             Python web
         </h3>
-        <p>
-            Data: {{data_hora.0}}
-        </p>
-        <p>
-            Hora: {{data_hora.1}}
-        </p>
     </header>
+    {% block relogio %}
+        <p>Deu errado...</p>
+    {% endblock %}
 </body>
+
+{% include "rodape_bruno.html"%}
 
 </html>

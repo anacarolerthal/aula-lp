@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.http.response import HttpResponseNotFound, HttpResponseRedirect
+from django.http.response import HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.urls import reverse
 
 def redireciona(request, param):
@@ -27,7 +27,8 @@ def dinamica(request,param):
     if param == 42:
         return HttpResponse("<h1>Parâmetro 42</p>")
     else:
-        return HttpResponseNotFound("<h1> Página não encontrada... :/</h1>")
+        raise Http404()
+        # return HttpResponseNotFound("<h1> Página não encontrada... :/</h1>")
 
 def pagina_dinamica(request):
     from datetime import date, datetime
@@ -41,4 +42,4 @@ def pagina_dinamica(request):
         "nome": "Bruno",
         "sobrenome": "Fornaro"
     }
-    return render(request, "pagina_dinamica.html", contexto)
+    return render(request, "pagina_dinamica_dtl.html", contexto)
