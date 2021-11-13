@@ -4,21 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <title>{{Bruno}}</title>
-    <h1>{{nome|add:" "|add:sobrenome|title}}</h1>
-    <p>Tamanho do nome: {{nome|add:" "|add:sobrenome|length}} caracteres.</p>
-    {% for letra in nome|add:" "|add:sobrenome %}
-        <p>{{letra|upper}}</p>
-    {% endfor %}
+    {% block estilo %}
+    {% endblock %}
+    
 </head>
 
 <body>
-    <header>
-        <h3>
-            Python web
-        </h3>
-    </header>
+    
+    {% block cabecalho %}
+    {% endblock %}
+
+    {% block conteudo %}
+    {% endblock %}
+
+
     {% block relogio %}
-        <p>Deu errado...</p>
     {% endblock %}
 </body>
 
