@@ -26,7 +26,7 @@ def redirect_ferias(request):
 
 def by_month(request, month):
     if month < 0 or month > 12:
-        raise Http404
+        raise Http404()
     elif month < 6:
         return render(request, 'ferias2.html')
     elif month < 8: 
