@@ -33,4 +33,4 @@ def rpg(request, sistema):
     context = {
         "sistema": sistema
     }
-    return render(request, "intro.html", context)
+    return render(request, "rpg.html", context)
