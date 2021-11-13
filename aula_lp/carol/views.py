@@ -1,4 +1,4 @@
-from django.http.response import HttpResponseNotFound, HttpResponseRedirect
+from django.http.response import HttpResponseNotFound, HttpResponseRedirect, Http404
 from django.shortcuts import render
 from django.urls import reverse
 
@@ -26,7 +26,7 @@ def redirect_ferias(request):
 
 def by_month(request, month):
     if month < 0 or month > 12:
-        return HttpResponseNotFound("Página não existe!")
+        raise Http404
     elif month < 6:
         return render(request, 'ferias2.html')
     elif month < 8: 
